@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1599695014 source:c:\users\lucas\desktop\laboratorio-programacion\tp 1n\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"operadores.h"
+
+1599621714 c:\users\lucas\desktop\laboratorio-programacion\tp 1n\operadores.h
+
+1599622174 source:c:\users\lucas\desktop\laboratorio-programacion\tp 1n\operadores.c
+	"operadores.h"
+
