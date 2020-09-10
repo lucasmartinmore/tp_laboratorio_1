@@ -8,9 +8,9 @@ int main()
     int opcion;
     int a;
     int b;
-    char seguir='y';
-    int flagErrorA=1;
-    int flagErrorB=1;
+    char continuar='y';
+    int operando_A=1;
+    int operando_B=1;
 
     menu();
 
@@ -25,13 +25,13 @@ int main()
         {
         case 1:
             a=operandoA();
-            flagErrorA=0;
+            operando_A=0;
             break;
         case 2:
-            if(flagErrorA==0)
+            if(operando_A==0)
             {
                 b=operandoB();
-                flagErrorB=0;
+                operando_B=0;
             }
             else
             {
@@ -39,7 +39,7 @@ int main()
             }
             break;
         case 3:
-            if(flagErrorA==1 || flagErrorB==1)
+            if(operando_A==1 || operando_B==1)
             {
                 printf("Se necesitan pasar ambos operadores para calcular\n");
             }
@@ -49,7 +49,7 @@ int main()
             }
             break;
         case 4:
-            if(flagErrorA==1 || flagErrorB==1)
+            if(operando_A==1 || operando_B==1)
             {
                 printf("Se necesita calcular para mostrar\n");
             }
@@ -59,14 +59,14 @@ int main()
             }
             break;
         case 5:
-            seguir='n';
+            continuar='n';
             break;
         default:
             printf("La opcion ingresada no es valida\n");
             fflush(stdin);
         }
     }
-    while(seguir=='y');
+    while(continuar=='y');
 
     return 0;
 }

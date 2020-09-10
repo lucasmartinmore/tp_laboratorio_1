@@ -55,7 +55,7 @@ void calculos(int a, int b)
 
     printf("El resultado de %d + %d es: %d \n",a,b,suma);
     printf("El resultado de %d - %d es: %d \n",a,b,resta);
-    if(a==0 || b==0)
+    if(b==0)
     {
         division=printf("No es posible dividir por 0\n");
     }
