@@ -1,10 +1,24 @@
 #include "operadores.h"
 
-void menu()
+void menu(int primer, int segundo, int a,int b)
 {
     printf("*****MENU*****\n\n");
-    printf("1. Ingresar 1er operando (A=x)\n");
-    printf("2. Ingresar 2do operando (B=y)\n");
+    if(primer==1 && segundo==1)
+    {
+        printf("1. Ingresar 1er operando (A=X)\n");
+    }
+    else
+    {
+        printf("1. Ingresar 1er operando (A=%d)\n",a);
+    }
+    if(segundo==1)
+    {
+        printf("1. Ingresar 1er operando (B=Y)\n");
+    }
+    else
+    {
+        printf("1. Ingresar 1er operando (B=%d)\n",b);
+    }
     printf("3. Calcular todas las operaciones\n");
     printf("a) Calcular la suma (A + B)\n");
     printf("b) Calcular la resta (A - B)\n");

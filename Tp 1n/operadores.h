@@ -5,8 +5,8 @@
 
 #endif // OPERADORES_H_INCLUDED
 
-/** \ //Invoco mi menu con las opciones disponibles
- *
+/** \ //Invoco mi menu con las opciones disponibles (llamando a mis banderas que van a habilitar
+ *    //el reemplazo de A=X y B=Y
  * \param
  * \param
  * \return //No retorno ningun dato, pero imprimo el menu principal.

@@ -12,14 +12,18 @@ int main()
     int operando_A=1;
     int operando_B=1;
 
-    menu();
+
+
 
     do
     {
+        system("cls");
+        menu(operando_A,operando_B,a,b);
+
+
         printf("Seleccione la opcion elegida: ");
         scanf("%d", &opcion);
 
-        //system("cls");
 
         switch(opcion)
         {
@@ -47,6 +51,7 @@ int main()
             {
                 calcular(a,b);
             }
+            system("pause");
             break;
         case 4:
             if(operando_A==1 || operando_B==1)
@@ -57,6 +62,7 @@ int main()
             {
                 calculos(a,b);
             }
+            system("pause");
             break;
         case 5:
             continuar='n';
@@ -64,7 +70,11 @@ int main()
         default:
             printf("La opcion ingresada no es valida\n");
             fflush(stdin);
+            system("pause");
         }
+
+
+
     }
     while(continuar=='y');
 
