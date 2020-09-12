@@ -3,7 +3,7 @@
 void menu(int primer, int segundo, int a,int b)
 {
     printf("*****MENU*****\n\n");
-    if(primer==1 && segundo==1)
+    if(primer==1)
     {
         printf("1. Ingresar 1er operando (A=X)\n");
     }
