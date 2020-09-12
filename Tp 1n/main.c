@@ -41,6 +41,7 @@ int main()
             {
                 printf("No se ingreso el valor de A. Ingrese A:\n");
             }
+            system("pause");
             break;
         case 3:
             if(operando_A==1 || operando_B==1)
