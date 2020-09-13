@@ -13,11 +13,11 @@ void menu(int primer, int segundo, int a,int b)
     }
     if(segundo==1)
     {
-        printf("1. Ingresar 1er operando (B=Y)\n");
+        printf("2. Ingresar 1er operando (B=Y)\n");
     }
     else
     {
-        printf("1. Ingresar 1er operando (B=%d)\n",b);
+        printf("2. Ingresar 1er operando (B=%d)\n",b);
     }
     printf("3. Calcular todas las operaciones\n");
     printf("a) Calcular la suma (A + B)\n");
