@@ -1,6 +1,6 @@
-#include "arrayEmployees.h"
+#include "ArrayEmployees.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 #include <stddef.h>
 
 //FUNCION MENU
@@ -100,16 +100,10 @@ int findEmployeeById(Employee* list, int len, int id)
 
 //FUNCION SACAR EMPLEADO
 
-int removeEmployee(Employee* list, int len)
+int removeEmployee(Employee* list, int len, int id)
 {
-    int idBaja;
     int indice;
-
-    printEmployees(list, len);
-
-    printf("Ingrese id de baja: ");
-    scanf("%d", &idBaja);
-    indice = findEmployeeById(list, len, idBaja);
+    indice = findEmployeeById(list, len, id);
 
     if(indice == -1)
     {
@@ -156,13 +150,13 @@ int modifycaEmployee(Employee* list, int len)
         case 1:
             printf("Ingrese nuevo nombre: ");
             fflush(stdin);
-            gets(name);
+            fgets(name, 51, stdin);
             strcpy(list[indice].name, name);
             break;
         case 2:
             printf("Ingrese nuevo Apellido: ");
             fflush(stdin);
-            gets(lastName);
+            fgets(lastName, 51, stdin);
             strcpy(list[indice].lastName, lastName);
             break;
         case 3:
@@ -200,13 +194,13 @@ int sortEmployees(Employee* list, int len, int order) //0 CRECIENTE 1 DECRECIENT
                 {
                     if(order==1) //CRECIENTE
                     {
-                        if((strcmp(list[i].lastName, list[j].lastName) >0) && list[i].sector < list[j].sector)
+                        if((strcmp(list[i].lastName, list[j].lastName) >0))
                         {
                             aux = list[i];
                             list[i] = list[j];
                             list[j] = aux;
                         }
-                        else if((strcmp(list[i].lastName, list[j].lastName) >0) && list[i].sector == list[j].sector)
+                        if((strcmp(list[i].lastName, list[j].lastName) == 0) && list[i].sector > list[j].sector)
                         {
                             aux = list[i];
                             list[i] = list[j];
@@ -215,13 +209,13 @@ int sortEmployees(Employee* list, int len, int order) //0 CRECIENTE 1 DECRECIENT
                     }
                     else // DECRECIENTE
                     {
-                        if((strcmp(list[i].lastName, list[j].lastName)<0) && list[i].sector > list[j].sector)
+                        if((strcmp(list[i].lastName, list[j].lastName)<0))
                         {
                             aux = list[i];
                             list[i] = list[j];
                             list[j]= aux;
                         }
-                        else if((strcmp(list[i].lastName, list[j].lastName)<0) && list[i].sector == list[j].sector)
+                        else if((strcmp(list[i].lastName, list[j].lastName) == 0) && list[i].sector < list[j].sector)
                         {
                             aux = list[i];
                             list[i] = list[j];
@@ -239,7 +233,7 @@ int sortEmployees(Employee* list, int len, int order) //0 CRECIENTE 1 DECRECIENT
 
 //FUNCION CALCULAR SALARIO TOTAL
 
-int Salary(Employee* list, int len) //preguntar salario promedio y mostrar todo
+int totalSalary(Employee* list, int len) //preguntar salario promedio y mostrar todo
 {
     if(list == NULL || len<0 || len>1000)
     {
@@ -257,7 +251,14 @@ int Salary(Employee* list, int len) //preguntar salario promedio y mostrar todo
             contador++;
         }
     }
-    promedio = acumulador / contador;
+    if(contador == 0)
+    {
+        promedio = 0;
+    }
+    else
+    {
+        promedio = acumulador / contador;
+    }
     for(int i=0; i<len; i++)
     {
         if(list[i].isEmpty==0)

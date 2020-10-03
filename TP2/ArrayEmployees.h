@@ -71,7 +71,7 @@ int findEmployeeById(Employee* list, int len, int legajo);
  *
  */
 
-int removeEmployee(Employee* list, int len);
+int removeEmployee(Employee* list, int len, int id);
 
 /** \//Esta funcion invoca a la funcion findEmployeeById() y solicita el dato a modificar
  *
@@ -101,5 +101,5 @@ int sortEmployees(Employee* list, int len, int order);
  *
  */
 
-int totalSalary(Employee* list, int len);
+int totalSalarysalary(Employee* list, int len);
 

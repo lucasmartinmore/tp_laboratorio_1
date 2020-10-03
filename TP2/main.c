@@ -6,17 +6,7 @@
 #define TAM 1000
 #define UP 1
 #define DOWN 0
-/*
-typedef struct
-{
-    int id;
-    char name[51];
-    char lastName[51];
-    float salary;
-    int sector;
-    int isEmpty;
-} Employee;
-*/
+
 int main()
 {
 
@@ -28,7 +18,7 @@ int main()
     float salary;
     int sector;
     int opcionInformar;
-    int flagInit= 0;
+    int idBaja;
     Employee* list;
     Employee arrayList[TAM];
     list = arrayList;
@@ -57,60 +47,28 @@ int main()
 
             addEmployee(list, TAM, contador, name, lastName, salary, sector);
             contador++;
-            flagInit=1;
             break;
         case 2:
             system("cls");
-            if(flagInit==1)
-            {
-
-                modifycaEmployee(list, TAM);
-            }
-            else
-            {
-                printf("Ningun empleado cargado para modificar\n\n");
-            }
+            modifycaEmployee(list, TAM);
             break;
         case 3:
             system("cls");
-            if(flagInit==1)
-            {
-                if(removeEmployee(list, TAM)==0)
-                {
-                    printf("Baja exitosa\n");
-                }
-            }
-            else
-            {
-                printf("Ningun empleado cargado para baja\n\n");
-            }
+            printf("Ingrese id de baja: ");
+            scanf("%d", &idBaja);
             break;
         case 4:
             system("cls");
-            if(flagInit==1)
+
+            printf("*****MENU INFORMAR*****\n\n0)Ascendente\n1)Descendente\n\nIngrese opcion: ");
+            scanf("%d", &opcionInformar);
+            while(opcionInformar<0 || opcionInformar>1)
             {
-                printf("*****MENU INFORMAR*****\n\n0)Ascendente\n1)Descendente\n\nIngrese opcion: ");
+                printf("Opcion invalida.Reingrese opcion:\n\n");
                 scanf("%d", &opcionInformar);
-                if(opcionInformar==0)
-                {
-                    sortEmployees(list, TAM, UP);
-                    printEmployees(list, TAM);
-                }
-                else if(opcionInformar==1)
-                {
-                    sortEmployees(list, TAM, DOWN);
-                    printEmployees(list, TAM);
-                }
-                else
-                {
-                    printf("Opcion invalida\n\n");
-                }
-                Salary(list, TAM);
             }
-            else
-            {
-                printf("Ningun empleado cargado para informar\n\n");
-            }
+            sortEmployees(list, TAM, opcionInformar);
+            totalSalary(list, TAM);
             break;
         case 5:
             seguir='n';
@@ -120,8 +78,8 @@ int main()
             break;
         }
         system("pause");
-
-    }while(seguir=='y');
+    }
+    while(seguir=='y');
 
     return 0;
 }
