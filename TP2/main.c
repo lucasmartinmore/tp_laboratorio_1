@@ -24,8 +24,6 @@ int main()
 
     do
     {
-        system("cls");
-
         switch(menu())
         {
         case 1:
@@ -75,7 +73,6 @@ int main()
             printf("Esta no es una opcion valida\n");
             break;
         }
-        system("pause");
     }
     while(seguir=='y');
 

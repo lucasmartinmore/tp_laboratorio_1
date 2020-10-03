@@ -101,5 +101,5 @@ int sortEmployees(Employee* list, int len, int order);
  *
  */
 
-int totalSalarysalary(Employee* list, int len);
+int totalSalary(Employee* list, int len);
 
