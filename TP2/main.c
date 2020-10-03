@@ -4,8 +4,6 @@
 #include <string.h>
 #include "ArrayEmployees.h"
 #define TAM 1000
-#define UP 1
-#define DOWN 0
 
 int main()
 {
@@ -59,12 +57,11 @@ int main()
             break;
         case 4:
             system("cls");
-
             printf("*****MENU INFORMAR*****\n\n0)Ascendente\n1)Descendente\n\nIngrese opcion: ");
             scanf("%d", &opcionInformar);
             while(opcionInformar<0 || opcionInformar>1)
             {
-                printf("Opcion invalida.Reingrese opcion:\n\n");
+                printf("Opcion invalida.Reingrese opcion: ");
                 scanf("%d", &opcionInformar);
             }
             sortEmployees(list, TAM, opcionInformar);
