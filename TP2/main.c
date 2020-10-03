@@ -27,7 +27,6 @@ int main()
         switch(menu())
         {
         case 1:
-            system("cls");
             printf("****Alta empleados****\n\n");
             printf("Nombre: ");
             scanf("%s", name);
@@ -45,16 +44,13 @@ int main()
             contador++;
             break;
         case 2:
-            system("cls");
             modifycaEmployee(list, TAM);
             break;
         case 3:
-            system("cls");
             printf("Ingrese id de baja: ");
             scanf("%d", &idBaja);
             break;
         case 4:
-            system("cls");
             printf("*****MENU INFORMAR*****\n\n1)Ascendente\n0)Descendente\n\nIngrese opcion: ");
             scanf("%d", &opcionInformar);
             while(opcionInformar<0 || opcionInformar>1)
