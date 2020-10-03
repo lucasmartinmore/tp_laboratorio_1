@@ -57,7 +57,7 @@ int main()
             break;
         case 4:
             system("cls");
-            printf("*****MENU INFORMAR*****\n\n0)Ascendente\n1)Descendente\n\nIngrese opcion: ");
+            printf("*****MENU INFORMAR*****\n\n1)Ascendente\n0)Descendente\n\nIngrese opcion: ");
             scanf("%d", &opcionInformar);
             while(opcionInformar<0 || opcionInformar>1)
             {
