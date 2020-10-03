@@ -68,6 +68,7 @@ int main()
                 scanf("%d", &opcionInformar);
             }
             sortEmployees(list, TAM, opcionInformar);
+            printEmployees(list, TAM);
             totalSalary(list, TAM);
             break;
         case 5:
