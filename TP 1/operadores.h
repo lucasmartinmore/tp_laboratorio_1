@@ -15,44 +15,74 @@
 
 void menu();
 
-/** \brief //Paso los operandos A y B para procesar el dato
+/** \brief //Paso los operandos cargado/s para procesar el dato
  *
  * \param //
  * \param //
- * \return  //No retorno dato solo imprimo un mensaje de ejecucion
+ * \return  //Retorno el valor del/de los operando cargado
  *
  */
 
-void calcular(int a, int b);
+int operandos();
 
-/** \brief //Solicito mi primer operando a evaluar
+/** \brief //Realizo la suma entre A y B
  *
- * \param //operando A
  * \param
- * \return //retorno mi operando A solicitado dentro de mi funcion.
- *
- */
-
-int operandoA();
-
-/** \brief //Solicito mi segundo operando a evaluar
- *
- * \param //operando B
  * \param
- * \return //retorno mi operando B solicitado dentro de mi funcion.
+ * \return  //Retorno el resultado de la operacion
  *
  */
 
-int operandoB();
 
-/** \brief //Paso los operando para realizar todas las operaciones disponible
-//dentro de mi funcion(SUMA, RESTA, DIVISION, MULTIPLICACION Y FACTORIAL).
+int suma(int a, int b);
+
+/** \brief //Realizo la resta entre A y B
  *
- * \param //operando A
- * \param //operando B
- * \return //No retorno dato especifico, pero imprimo todas las operaciones realizadas
- //dentro de mi funcion.
+ * \param
+ * \param
+ * \return  //Retorno el resultado de la operacion
  *
  */
 
-void calculos(int a, int b);
+int resta(int a, int b);
+
+/** \brief //Realizo la division entre A y B
+ *
+ * \param //valido los el valor de mis variables cargadas
+ * \param
+ * \return  //Retorno el resultado de la operacion
+ *
+ */
+
+float division(int a, int b);
+
+/** \brief //Realizo la multiplicacion entre A y B
+ *
+ * \param
+ * \param
+ * \return  //Retorno el resultado de la operacion
+ *
+ */
+
+int multiplicacion(int a, int b);
+
+/** \brief //Realizo el factorial de mi variable cargada
+ *
+ * \param //valido los el valor de mi variable cargada.
+ * \param
+ * \return  //Retorno el resultado de la operacion
+ *
+ */
+
+int factorial(int x);
+
+/** \brief //Realizo el informe final con las vaiables cargadas con los resultados de las funciones anteriores.
+ *
+ * \param
+ * \param
+ * \return  //No retorno nada, solo imprimo los valores
+ *
+ */
+
+void informeFinal(int a, int b, int resultadoSuma, int resultadoResta, int resultadoMultiplicacion, float resultadoDivision, int resultadoFactorialA, int resultadoFactorialB);
+

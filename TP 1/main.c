@@ -11,37 +11,37 @@ int main()
     char continuar='y';
     int operando_A=1;
     int operando_B=1;
-
-
-
+    int ResultadoSuma;
+    int ResultadoResta;
+    float ResultadoDivision;
+    int ResultadoMultiplicacion;
+    int ResultadoFactorialA;
+    int ResultadoFactorialB;
 
     do
     {
         system("cls");
         menu(operando_A,operando_B,a,b);
-
-
         printf("Seleccione la opcion elegida: ");
         scanf("%d", &opcion);
-
 
         switch(opcion)
         {
         case 1:
-            a=operandoA();
+            a = operandos();
             operando_A=0;
             break;
         case 2:
             if(operando_A==0)
             {
-                b=operandoB();
+                b = operandos();
                 operando_B=0;
             }
             else
             {
                 printf("No se ingreso el valor de A. Ingrese A:\n");
+                system("pause");
             }
-            system("pause");
             break;
         case 3:
             if(operando_A==1 || operando_B==1)
@@ -50,7 +50,13 @@ int main()
             }
             else
             {
-                calcular(a,b);
+                ResultadoSuma = suma(a,b);
+                ResultadoResta = resta(a,b);
+                ResultadoDivision = division(a,b);
+                ResultadoMultiplicacion = multiplicacion(a,b);
+                ResultadoFactorialA = factorial(a);
+                ResultadoFactorialB = factorial(b);
+                printf("Se realizo las operaciones posibles entre %d y %d ...\n",a,b);
             }
             system("pause");
             break;
@@ -61,7 +67,7 @@ int main()
             }
             else
             {
-                calculos(a,b);
+                informeFinal(a,b,ResultadoSuma,ResultadoResta,ResultadoMultiplicacion,ResultadoDivision,ResultadoFactorialA,ResultadoFactorialB);
             }
             system("pause");
             break;
@@ -73,9 +79,6 @@ int main()
             fflush(stdin);
             system("pause");
         }
-
-
-
     }
     while(continuar=='y');
 

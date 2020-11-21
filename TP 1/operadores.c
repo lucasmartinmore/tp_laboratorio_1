@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 #include "operadores.h"
 
 void menu(int primer, int segundo, int a,int b)
@@ -13,11 +16,11 @@ void menu(int primer, int segundo, int a,int b)
     }
     if(segundo==1)
     {
-        printf("2. Ingresar 1er operando (B=Y)\n");
+        printf("2. Ingresar 2do operando (B=Y)\n");
     }
     else
     {
-        printf("2. Ingresar 1er operando (B=%d)\n",b);
+        printf("2. Ingresar 2do operando (B=%d)\n",b);
     }
     printf("3. Calcular todas las operaciones\n");
     printf("a) Calcular la suma (A + B)\n");
@@ -34,75 +37,65 @@ void menu(int primer, int segundo, int a,int b)
     printf("5. Salir\n\n");
 }
 
-int operandoA()
+int operandos()
 {
     int a;
-    printf("Ingrese 1er operando A=");
+    printf("Ingrese operando: ");
     scanf("%d",&a);
     return a;
 }
-
-int operandoB()
+int suma(int a, int b)
 {
-    int b;
-    printf("Ingrese 2do operando B=");
-    scanf("%d",&b);
-    return b;
+    int suma=(a+b);
+    return suma;
 }
-
-void calcular(int a, int b)
+int resta(int a, int b)
 {
-    printf("Se esta realizando las operaciones posibles entre %d y %d ...\n",a,b);
+    int resta=(a-b);
+    return resta;
 }
-
-void calculos(int a, int b)
+float division(int a, int b)
 {
-    int suma;
-    int resta;
     float division;
-    int multiplicacion;
-    long long int factorialA=1;
-    long long int factorialB=1;
-    suma=(a+b);
-    resta=(a-b);
-    multiplicacion=(a*b);
-
-    printf("El resultado de %d + %d es: %d \n",a,b,suma);
-    printf("El resultado de %d - %d es: %d \n",a,b,resta);
     if(b==0)
     {
         division=printf("No es posible dividir por 0\n");
     }
     else
     {
-
         division=(float)a/b;
-        printf("El resultado de %d / %d es: %.2f \n",a,b,division);
     }
-
-    printf("El resultado de %d * %d es: %d \n",a,b,multiplicacion);
-    if(a<0)
-    {
-        factorialA=printf("No se puede sacar el factorial de un entero negativo\n");
-    }
-    else
-    {
-        for (int i=1; i<=a; i++)
-        {
-            factorialA=factorialA*i;
-        }
-        printf("El factorial de %d es: %lld \n",a,factorialA);
-    }
-    if(b<0)
-    {
-        factorialA=printf("No se puede sacar el factorial de un entero negativo\n");
-    }
-    else
-    {
-        for (int i=1; i<=b; i++)
-        {
-            factorialB=factorialB*i;
-        }
-        printf("El factorial de %d es: %lld \n",b,factorialB);
-    }
+    return division;
 }
+int multiplicacion(int a, int b)
+{
+    int multiplicacion=(a*b);
+    return multiplicacion;
+}
+int factorial(int x)
+{
+    long long int factorial=1;
+    if(x<0)
+    {
+        factorial=printf("No se puede sacar el factorial de un entero negativo\n");
+    }
+    else
+    {
+        for (int i=1; i<=x; i++)
+        {
+            factorial=factorial*i;
+        }
+    }
+    return factorial;
+}
+
+void informeFinal(int a, int b, int resultadoSuma, int resultadoResta, int resultadoMultiplicacion, float resultadoDivision, int resultadoFactorialA, int resultadoFactorialB)
+{
+    printf("El resultado de %d + %d es %d\n",a,b,resultadoSuma);
+    printf("El resultado de %d - %d es %d\n",a,b,resultadoResta);
+    printf("El resultado de %d / %d es %.2f\n",a,b,resultadoDivision);
+    printf("El resultado de %d * %d es %d\n",a,b,resultadoMultiplicacion);
+    printf("El resultado de factorial de %d es %d\n",a,resultadoFactorialA);
+    printf("El resultado de factorial de %d es %d\n",b,resultadoFactorialB);
+}
+
