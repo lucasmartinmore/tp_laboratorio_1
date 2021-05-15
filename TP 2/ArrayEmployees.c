@@ -1,11 +1,13 @@
 #include "ArrayEmployees.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
 
 //FUNCION MENU
 int menu()
 {
+    system("cls");
     int opcion;
     printf("*****ABM PERSONAS*****\n\n");
     printf("1)Alta\n");
